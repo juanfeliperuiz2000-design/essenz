@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos - ESSENZ</title>
+
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        <img src="images/logo.png" alt="">
+        <h1>ESSENZ</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="empresa.html">Sobre la Empresa</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="pagos.html">Pagos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<section class="pagos-page">
+
+    <div class="pago-container">
+
+        <h2>Pasarela de Pagos</h2>
+
+        <p>
+            Realiza tus pagos de manera rápida, segura y confiable.
+        </p>
+
+        <form>
+
+            <input type="text" placeholder="Nombre completo" required>
+
+<select id="producto" onchange="actualizarPrecio()" required>
+
+    <option value="">
+        Selecciona una mesa
+    </option>
+
+    <option value="1500000">
+        Stella di Marmo - $1.500.000 COP
+    </option>
+
+    <option value="1700000">
+        Luna di Marmo - $1.700.000 COP
+    </option>
+
+    <option value="2000000">
+        Splendore di Farfalla - $2.000.000 COP
+    </option>
+
+    <option value="1200000">
+       Foresta - $1.200.000 COP
+    </option>
+    </select>
+
+    <input type="text" placeholder="Dirección de residencia" required>
+            <input type="email" placeholder="Correo electrónico" required>
+
+            <input type="text" placeholder="Número de tarjeta" required>
+
+            <div class="fila">
+
+                <input type="text" placeholder="MM/AA" required>
+
+                <input type="text" placeholder="CVV" required>
+
+            </div>
+
+    <input
+    type="text"
+    id="valor"
+    placeholder="Valor a pagar"
+    readonly
+>
+
+            <button type="submit">
+                Pagar Ahora
+            </button>
+
+        </form>
+
+    </div>
+
+</section> 
+<script>
+    
+
+function actualizarPrecio(){
+
+    let producto =
+    document.getElementById("producto");
+
+    let valor =
+    document.getElementById("valor");
+
+    let precio =
+    producto.value;
+
+    if(precio !== ""){
+
+        valor.value =
+        Number(precio).toLocaleString("es-CO")
+        + " COP";
+
+    }else{
+
+        valor.value = "";
+
+    }
+}
+
+</script>
+
+ <!-- FOOTER -->
+    <footer>
+        <p>© 2026 ESSENZ - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
